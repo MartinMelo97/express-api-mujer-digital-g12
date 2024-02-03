@@ -1,0 +1,26 @@
+{
+  "name": "express-api-mujer-digital-g12",
+  "version": "1.0.0",
+  "description": "Express API for Mujer Digital G12 C2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "mujer",
+    "digital",
+    "javascript"
+  ],
+  "author": "Martin Melo <martin.melo.dev.97@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
