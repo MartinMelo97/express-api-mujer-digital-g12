@@ -88,13 +88,13 @@ app.post('/products', function(req, res) {
 app.put('/products/:id', function(req, res){
     const { id } = req.params;
 
-const productIndex = products.findIndex(function(product) {
+    const productIndex = products.findIndex(function(product) {
         return product.id === Number(id)
     });
 
     if (productIndex === -1) {
         return res.status(404).json({
-            message: 'No se encontró el producto con el ID: ' + id
+            message: 'No se encontró el producto con el ID:' + id
         })
     }
 
@@ -107,6 +107,24 @@ const productIndex = products.findIndex(function(product) {
     products[productIndex] = updatedProduct;
 
     return res.status(200).json(products);
+});
+
+app.delete('/products/:id', function(req, res) {
+    const { id } = req.params;
+
+    const productIndex = products.findIndex(function(product) {
+        return product.id === Number(id)
+    });
+
+    if (productIndex === -1) {
+        return res.status(404).json({
+            message: 'No se encontró el producto con el ID:' + id
+        })
+    }
+
+    products.splice(productIndex, 1);
+
+    return res.status(200).json(products)
 
 });
 
